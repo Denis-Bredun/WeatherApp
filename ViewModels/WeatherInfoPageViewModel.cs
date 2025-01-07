@@ -32,7 +32,7 @@ namespace WeatherApp.ViewModels
         private string _location;
 
         [ObservableProperty]
-        private string _humidity;
+        private int _humidity;
 
         [ObservableProperty]
         private string _cloudCoverLevel;
@@ -50,7 +50,18 @@ namespace WeatherApp.ViewModels
         [RelayCommand]
         private async Task FetchWeatherInformation()
         {
-            
+            var weatherApiResponse = await _weatherApiService.GetWeatherInformation(Latitude, Longitude);
+
+            if (weatherApiResponse == null)
+                return;
+
+            WeatherIcon = weatherApiResponse.Current.WeatherIcons[0];
+            Temperature = $"{weatherApiResponse.Current.Temperature}°C";
+            Location = $"{weatherApiResponse.Location.Name}, {weatherApiResponse.Location.Region}, {weatherApiResponse.Location.Country}";
+            WeatherDescription = weatherApiResponse.Current.WeatherDescriptions[0];
+            Humidity = weatherApiResponse.Current.Humidity;
+            CloudCoverLevel = $"{weatherApiResponse.Current.Cloudcover}%";
+            IsDay = weatherApiResponse.Current.IsDay.ToUpper();
         }
     }
 }
