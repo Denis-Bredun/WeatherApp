@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherApp.Properties;
+using WeatherApp.Services;
 
 namespace WeatherApp.ViewModels
 {
@@ -39,13 +40,17 @@ namespace WeatherApp.ViewModels
         [ObservableProperty]
         private string _isDay;
 
+        private readonly WeatherApiService _weatherApiService;
+
+        public WeatherInfoPageViewModel()
+        {
+            _weatherApiService = new WeatherApiService();
+        }
+
         [RelayCommand]
         private async Task FetchWeatherInformation()
         {
-            string apiKey = Resources.API_KEY;
-            string apiBaseUrl = Resources.API_BASE_URL;
-
-
+            
         }
     }
 }
