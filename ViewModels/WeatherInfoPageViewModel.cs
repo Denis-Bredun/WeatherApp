@@ -52,7 +52,7 @@ namespace WeatherApp.ViewModels
         {
             var weatherApiResponse = await _weatherApiService.GetWeatherInformation(Latitude, Longitude);
 
-            if (weatherApiResponse == null)
+            if (weatherApiResponse == null || weatherApiResponse.Current == null)
                 return;
 
             WeatherIcon = weatherApiResponse.Current.WeatherIcons[0];

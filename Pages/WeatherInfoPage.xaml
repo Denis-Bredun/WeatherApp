@@ -36,22 +36,22 @@
 
             <Frame Grid.Column="0">
                 <VerticalStackLayout>
-                    <Label Text="0" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
-                    <Label Text="{Binding Humidity}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Humidity}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
+                    <Label Text="Humidity" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
 
             <Frame Grid.Column="1">
                 <VerticalStackLayout>
-                    <Label Text="0%" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
-                    <Label Text="{Binding CloudCoverLevel}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding CloudCoverLevel}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
+                    <Label Text="Cloud" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
 
             <Frame Grid.Column="2">
                 <VerticalStackLayout>
-                    <Label Text="YES" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
-                    <Label Text="{Binding IsDay}" HorizontalOptions="Center"/>
+                    <Label Text="{Binding IsDay}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="#606cf2"/>
+                    <Label Text="Is Day" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
 
